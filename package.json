@@ -1,0 +1,39 @@
+{
+  "name": "angular-auto-kit",
+  "version": "1.0.0",
+  "description": "A simple AngularJS Starter Kit which automatically loads MVC's dependencies.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SylvainMarty/AngularAutoKit.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "kit",
+    "starter",
+    "kit",
+    "dependencies",
+    "mvc",
+    "ready",
+    "to",
+    "use"
+  ],
+  "author": "Sylvain Marty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SylvainMarty/AngularAutoKit/issues"
+  },
+  "homepage": "https://github.com/SylvainMarty/AngularAutoKit#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "requirejs": "^2.3.1",
+    "angular-ui-bootstrap": "^2.1.3",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies" : {}
+}
