@@ -66,6 +66,10 @@ Index.html is the main skeleton of your web application. You can add some styles
 * The tag which contain the directive who load the current controller view (`<div data-ng-view></div>`)
 * The third party scripts and requirejs script tag. Those scripts initialize AngularJS and its modules. Only add scripts here if it's an angular official module (like ngRoute). To add a non-official angular plugin, refer to the part *Get started > Customize*.
 
+The `app` folder contain all the web app project files.
+
+The `static` mean stylesheets, pictures, fonts and whatever static stuff.
+
 --------
 
 ## Get started
