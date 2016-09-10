@@ -2,20 +2,23 @@
 
 A simple AngularJS Starter Kit which automatically loads MVC's dependencies.
 
---------
 
 ## Table of content
 
-1. [Overview](#)
-2. [Get started](#)
-	* [Install](#)
-	* [Deploy](#)
-	* [Run](#)
-3. [Customize](#)
-4. [Samples](#)
-5. [Contributions](#)
+1. [Overview](#overview)
+2. [Get started](#get-started)
+	* [Install](#install)
+	* [Deploy](#deploy)
+	* [Run](#run)
+3. [Customize](#customize)
+	* [Conventions](#conventions)
+	* [Route provider](#route-provider)
+	* [Controller](#controller)
+	* [View](#view)
+	* [Services, directives, factories, filters](#services-directives-factories-filters)
+4. [Samples](#samples)
+5. [Issues and contributing](#issues-and-contributing)
 
---------
 
 ## Overview
 
@@ -50,7 +53,6 @@ This repository provide a simple AngularJS application structure which can be us
 |   |   |-- helloController.js
 |   |-- directives
 |   |-- services
-|   |   |-- authService.js
 |   |   |-- config.js
 |   |   |-- routeResolver.js
 |   |-- views
@@ -73,7 +75,6 @@ The `app` folder contain all the web app project files.
 
 The `static` mean stylesheets, pictures, fonts and whatever static stuff.
 
---------
 
 ## Get started
 
@@ -84,11 +85,11 @@ Clone or download this repository. Then, you will need [NPM (Node Package Manage
 Go to the project root directory and, with *npm*, just type `npm install`. What's going there ? The package manager downloading all the project dependencies like AngularJS, RequireJS, etc.
 
 ### Run
-Like I said before, this project need an HTTP server. I recommend the node module `http-server` for local tests. It's very simple to use. Just type those commands in your terminal (works on Windows, Linux and OSX).
+Like I said before, this project need an HTTP server. I recommend the node module `http-server` for local tests. It's very simple to use, just type those commands in your terminal (works on Windows, Linux and OSX) :
 
 ```sh
 npm install http-server -g
-http-server -p 9000
+http-server -c-1 -p 9000
 ```
 
 We just tell npm to install the module `http-server` on the computer, not only in the directory.
@@ -205,10 +206,17 @@ define(['app'], function (app) {
 });
 ```
 
---------
 
 ## Samples
 
 * [Bootstrap UI](#)
+* [API service](#)
 
 More samples coming soon.
+
+
+## Issues and contributing
+
+To contribute, please make sure to checkout your branch based on `dev` before working. I'll appreciate all your feedbacks and contributions.
+
+For features suggestion and bugs, please open an issue, I will answer you as soon as possible.
