@@ -67,7 +67,9 @@ This repository provide a simple AngularJS application structure which can be us
 
 `index.html` is the main skeleton of your web application. You can add some stylesheets in the head or change the layout. In this file, there are some content which must stay intact :
 * The tag which contain the directive who load the current controller view (`<div data-ng-view></div>`)
-* The third party scripts and requirejs script tag. Those scripts initialize AngularJS and its modules. Only add scripts here if it's an angular official module (like ngRoute). To add a non-official angular plugin, refer to the part *Get started > Customize*.
+* The third party scripts and requirejs script tag. Those scripts initialize AngularJS and RequireJS. Don't add scripts or stylesheets here, use main.js.
+
+`main.js` contain all stylesheets and JS scripts needed by your app. If you need to add libraries like bootstrap or other angular module, just add it to the list. I wrote comment to help you into the file.
 
 `node_modules` will contain all the project dependencies. When you download or clone this repository, this folder doesn't exist. Just keep going to the part *Get started > Install*.
 
