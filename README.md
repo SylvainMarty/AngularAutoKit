@@ -69,11 +69,14 @@ This repository provide a simple AngularJS application structure which can be us
 * The tag which contain the directive who load the current controller view (`<div data-ng-view></div>`)
 * The third party scripts and requirejs script tag. Those scripts initialize AngularJS and its modules. Only add scripts here if it's an angular official module (like ngRoute). To add a non-official angular plugin, refer to the part *Get started > Customize*.
 
-The `app` folder contain all the web app project files.
-
 `node_modules` will contain all the project dependencies. When you download or clone this repository, this folder doesn't exist. Just keep going to the part *Get started > Install*.
 
 The `static` mean stylesheets, pictures, fonts and whatever static stuff.
+
+The `app` folder contain **all the web app project files**. In this folder. There is 3 important files at the root :
+* `app.js` : the declaration of the app and the angular modules declaration (like `ngRoute`, `ngResource`, etc.).
+* `config.js` : the dynamic loading configuration file. Just don't touch it. Seriously.
+* `routes.js` : the routes of the applications (/home, /users or whatever you want).
 
 
 ## Get started
@@ -95,12 +98,14 @@ http-server -c-1 -p 9000
 We just tell npm to install the module `http-server` on the computer, not only in the directory.
 Then, we just use the soft to start on a web server on the port 9000. You can choose an other port if it's already taken.
 
+Then, just go to your favorite browser and type [http://localhost:9000](http://localhost:9000) in it.
+
 ### Customize
 The first thing I want when I use a external source code to start a project, it's to rename the AngularJS app name (`ng-app`). With AngularJS MVC Starter Kit, you can change this by changing the `webApp` word by whatever you want.
 
-Just go to the two files `main.js` and `app/app.js` and replace `webApp`. You can do a search and replace `webApp` recursively too with the text editor of your choice.
+Just go to the two files `main.js` and `app/app.js` and replace `webApp`. You can do a search and replace `webApp` recursively with the text editor of your choice too.
 
-#### Conventions
+#### Habits
 For all the project files which need to be load dynamically, their code need to start like this :
 
 ```js
@@ -119,7 +124,7 @@ define(['app'], function (app) {
 #### Route provider
 A MVC based web app always contain routes. Routes are the "path" which can be accessible by users to do some stuff. For each stuff, there is a *route* which refer to a *view* and a *controller*.
 
-To add a route, just go to the `app/app.js`, to the line :
+Add a route in `app/routes.js` :
 ```js
 $routeProvider
 	.when('/hello', route.resolve('hello', '/', 'ctrl'))
@@ -172,9 +177,13 @@ You can access to the controller method with the alias :
 ```
 
 #### Services, directives, factories, filters
-Like the controller, those components can be loaded dynamically by the project. Just register them with the object `app.register`.
+For the moment, I haven't find the best way to load dynamically all angularJS components. So, to install on of the components listed in the title, you need to do this : add the path to the component in the `main.js` (relative to the `app` folder). That's all.
 
-**Example :**
+To use it, just call it's name in the parameter of your controller / other component.
+
+##### Example :
+**1) Component creation**
+(tidied in `app/directives/doStuff.js`)
 ```js
 'use strict';
 
@@ -186,7 +195,7 @@ define(['app'], function (app) {
      *
      * use : <do-stuff two-way-binding="object"></do-stuff>
      */
-    app.register.directive('doStuff', ['$timeout',
+    app.directive('doStuff', ['$timeout',
     function ($timeout) {
 
 		var link = function($scope, $element) {
@@ -205,6 +214,24 @@ define(['app'], function (app) {
 
 });
 ```
+**2) Register the component into `main.js`**
+```js
+require(
+    [
+		// Add your angular components here
+        'app',
+        'config',
+        'routes',
+        'services/routeResolver',
+        'services/properties',
+        'directives/doStuff'
+    ],
+    function () {
+        angular.bootstrap(document, ['webApp']);
+    }
+);
+
+```
 
 
 ## Samples
@@ -217,6 +244,6 @@ More samples coming soon.
 
 ## Issues and contributing
 
-To contribute, please make sure to checkout your branch based on `dev` before working. I'll appreciate all your feedbacks and contributions.
+To contribute, please make sure to checkout your branch based on `dev` before working. I will appreciate all your feedbacks and contributions.
 
-For features suggestion and bugs, please open an issue, I will answer you as soon as possible.
+for any request, bug or contribution, please open an issue, I will answer you as soon as possible.

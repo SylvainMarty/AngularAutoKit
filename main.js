@@ -5,6 +5,7 @@ require.config({
 
 require(
     [
+        // Add your angular components here
         'app',
         'config',
         'routes',
