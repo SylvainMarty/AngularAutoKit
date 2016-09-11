@@ -10,7 +10,8 @@ require(
         'config',
         'routes',
         'services/routeResolver',
-        'services/properties'
+        'services/properties',
+        'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js' // Bootstrap UI lib
     ],
     function () {
         angular.bootstrap(document, ['webApp']);

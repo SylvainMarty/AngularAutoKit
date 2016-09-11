@@ -5,7 +5,8 @@ define(['services/routeResolver'], function () {
     var app = angular.module('webApp',
         [
             'ngRoute',
-            'routeResolverServices'
+            'routeResolverServices',
+            'ui.bootstrap'
         ]);
 
     return app;
