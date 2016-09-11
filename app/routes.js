@@ -17,6 +17,7 @@ define(['app'], function (app) {
             // The second parameter allows for putting related controllers/views into subfolders to better organize large projects
             // Thanks to Ton Yeung for the idea and contribution
             .when('/hello', route.resolve('hello', '/', 'ctrl'))
+            .when('/post/:post_id', route.resolve('postPage', '/posts/', 'ctrl'))
             .otherwise({ redirectTo: '/hello' });
 
     }]);

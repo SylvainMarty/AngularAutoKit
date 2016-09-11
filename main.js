@@ -10,7 +10,8 @@ require(
         'config',
         'routes',
         'services/routeResolver',
-        'services/properties'
+        'services/properties',
+        'services/Api'
     ],
     function () {
         angular.bootstrap(document, ['webApp']);
