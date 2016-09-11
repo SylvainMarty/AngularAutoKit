@@ -49,15 +49,18 @@ This repository provide a simple AngularJS application structure which can be us
 |-- main.js
 |-- app
 |   |-- app.js
+|   |-- config.js
+|   |-- routes.js
 |   |-- controllers
 |   |   |-- helloController.js
 |   |-- directives
+|   |-- factories
+|   |-- filters
 |   |-- services
-|   |   |-- config.js
+|   |   |-- properties.js
 |   |   |-- routeResolver.js
 |   |-- views
 |       |-- hello.html
-|-- node_modules
 |-- static
     |-- css
         |-- style.css
@@ -238,8 +241,8 @@ require(
 
 ## Samples
 
-* [Bootstrap UI](#)
-* [API service](#)
+* [Bootstrap UI](https://github.com/SylvainMarty/AngularMVCStarterKit/tree/sample-bootstrap-ui)
+* [API service](https://github.com/SylvainMarty/AngularMVCStarterKit/tree/sample-api-service)
 
 More samples coming soon.
 
