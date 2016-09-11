@@ -223,12 +223,18 @@ define(['app'], function (app) {
 ```js
 require(
     [
-		// Add your angular components here
+        // Stylesheets (begin by css!/)
+        'css!/static/css/style.css',
+
+        // JavaScript (add .js if files are in node_modules)
         'app',
         'config',
         'routes',
         'services/routeResolver',
         'services/properties',
+        'node_modules/angular-route/angular-route.min.js',
+
+        // Add your angular components here
         'directives/doStuff'
     ],
     function () {
