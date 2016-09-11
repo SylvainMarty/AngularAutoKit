@@ -6,8 +6,10 @@ require.config({
 require(
     [
         'app',
+        'config',
+        'routes',
         'services/routeResolver',
-        'services/config'
+        'services/properties'
     ],
     function () {
         angular.bootstrap(document, ['webApp']);
